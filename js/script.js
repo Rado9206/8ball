@@ -29,7 +29,7 @@ const checkInput = () => {
 
 const genereteAnswer = () => {
 	answer.style.visibility = 'visible'
-	const number = Math.floor(Math.random() * 5)
+	const number = Math.floor(Math.random() * answersArr.length)
 	answer.innerHTML = `<span>Odpowiedź: </span> ${answersArr[number]}`
 }
 
