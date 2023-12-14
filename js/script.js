@@ -3,7 +3,7 @@ const input = document.querySelector('input')
 const answer = document.querySelector('.answer')
 const error = document.querySelector('.error')
 
-const answersArr = ['Tak!', 'Nie!', 'Może...', 'Ciężko powiedzieć...', 'Lepiej nie wiedzieć...']
+const answersArr = ['Tak!', 'Raczej tak...', 'I to jak...', 'Nie!', 'Może...', 'Ciężko powiedzieć...', 'Lepiej nie wiedzieć...']
 
 const shakeBall = () => {
 	ball.classList.add('shake-animation')
@@ -11,6 +11,9 @@ const shakeBall = () => {
 }
 
 const checkInput = () => {
+
+	answer.style.visibility = 'hidden'
+
 	if (input.value !== '' && input.value.slice(-1) === '?') {
 		genereteAnswer()
 		error.textContent = ''
@@ -25,6 +28,7 @@ const checkInput = () => {
 }
 
 const genereteAnswer = () => {
+	answer.style.visibility = 'visible'
 	const number = Math.floor(Math.random() * 5)
 	answer.innerHTML = `<span>Odpowiedź: </span> ${answersArr[number]}`
 }
